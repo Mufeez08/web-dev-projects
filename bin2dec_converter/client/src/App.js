@@ -1,23 +1,35 @@
-import logo from './logo.svg';
 import './App.css';
+import {useState,useEffect} from "react";
 
 function App() {
+  const [bin,setBin] = useState("");
+  const [decimal, setDecimal] = useState("");
+
+  const handleBinaryInputChange = (event) => {
+    const value = event.target.value;
+    if (/^[0-1]*$/.test(value) || value === "") {
+      setBin(value);
+      const decimal = binaryToDecimal(value);
+      setDecimal(decimal);
+    }
+  };
+
+  const binaryToDecimal = (binary) => {
+    if (binary === "") {
+      return ""; 
+    }
+    return parseInt(binary, 2).toString();
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <div className="App">
+      <form>
+        <label>Bin2Dec Converter</label>
+        <input value={bin} onChange={handleBinaryInputChange}/>
+      </form>
+      <p>{decimal}</p>
+    </div>
     </div>
   );
 }

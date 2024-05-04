@@ -36,3 +36,76 @@
     transform: rotate(360deg);
   }
 }
+/* Apply a font to the whole page */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #1a1a1a;
+  /* Dark background */
+  color: #ffffff;
+  /* Light text */
+  display: flex;
+  justify-content: center;
+  /* Center the content horizontally */
+  align-items: center;
+  /* Center the content vertically */
+  height: 100vh;
+  /* Use the full height of the viewport */
+  margin: 0;
+  /* Remove default margin */
+}
+
+/* Style the form */
+form {
+  background-color: #333;
+  /* Slightly lighter background for the form */
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  /* Add some shadow for depth */
+}
+
+/* Style the input field */
+input[type="text"] {
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 5px;
+  width: calc(100% - 22px);
+  /* Full width minus padding and border */
+}
+
+/* Style the label */
+label {
+  display: block;
+  /* Make the label take up the full width */
+  margin-bottom: 5px;
+  color: #ccc;
+  /* Slightly lighter text for the label */
+}
+
+/* Style the submit button */
+button {
+  background-color: #0a8;
+  /* A stand-out color for the button */
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  text-transform: uppercase;
+  /* Capitalize the button text */
+  cursor: pointer;
+  /* Change the mouse pointer on hover */
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+/* Add hover effect for the button */
+button:hover {
+  background-color: #0c9;
+  /* A lighter color when hovered */
+}
+
+/* Remove default focus outline */
+input[type="text"]:focus,
+button:focus {
+  outline: none;
+}
